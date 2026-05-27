@@ -29,8 +29,19 @@ app.get('/',(req,res)=>{
 //chat models
 
 const model= new ChatGoogleGenerativeAI({
-    model:
+    model:"model/gemini-2.5-flash",
+    maxOutputTokens:2048,
+    temperature:0.7,
+    apiKey:process.env.GOGGLE_API_KEY,
+});
+
+//tool
+const getmenutool= new DynamicStructuredTool({
+    name:"getmenu",
+    description:"",
+    schema:
 })
+
 
 
 const port=3000;
